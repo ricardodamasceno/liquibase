@@ -1,0 +1,10 @@
+spring:
+    liquibase:
+        change-log: classpath:/data/changelog/liquibase-changelog.xml
+        enabled: true
+
+    datasource:
+        url: jdbc:mysql://localhost:3306/quickops?useSSL=false
+        username: root
+        password: root
+        driver-class-name: com.mysql.jdbc.Driver

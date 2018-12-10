@@ -1,0 +1,47 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+
+    <changeSet id="3" author="Ricardo Damasceno">
+        <sql>
+            create table refusal
+            (
+            id    bigint auto_increment
+            primary key,
+            `key` varchar(255) not null,
+            type  varchar(255) null
+            );
+        </sql>
+
+        <sql>
+            create table acquisition
+            (
+            id                bigint auto_increment
+            primary key,
+            operation         bigint                         null,
+            creation_date     datetime                       null,
+            description       text                           null,
+            resolution        text                           null,
+            type              varchar(50)                    null,
+            reason            text                           null,
+            acquisition_value decimal(19, 2)                 null,
+            currency_code     char(3) default 'BRL'          null,
+            payment_method    varchar(50)                    null,
+            payment_mode      varchar(50)                    null,
+            initial_value     decimal(19, 2)                 null,
+            final_value       decimal(19, 2)                 null,
+            saving_value      decimal(19, 2)                 null,
+            provider          bigint                         null,
+            other_provider    varchar(500)                   null,
+            extra_info        text                           null,
+            prevision_date    datetime                       null,
+            item_status       varchar(50) default 'INFORMED' null
+            )
+            charset = utf8;
+        </sql>
+    </changeSet>
+
+</databaseChangeLog>

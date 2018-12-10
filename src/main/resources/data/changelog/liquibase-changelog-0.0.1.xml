@@ -1,0 +1,34 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+
+    <changeSet id="1" author="Ricardo Damasceno">
+        <sql>
+            create table collaborator
+            (
+            id             bigint           not null
+            primary key,
+            name           varchar(255)     null,
+            email          varchar(255)     null,
+            active         bit default b'1' null,
+            sap_id         varchar(100)     null,
+            cpf            varchar(50)      null,
+            document       varchar(50)      null,
+            birth_date     datetime         null,
+            admission_date datetime         null,
+            cost_center    bigint           null,
+            requester_team bigint           null,
+            passport       varchar(50)      null,
+            reviser        bit default b'0' null,
+            co_founder     bit default b'0' null,
+            locale         varchar(50)      null,
+            timezone       varchar(150)     null
+            )
+            charset = utf8;
+        </sql>
+    </changeSet>
+
+</databaseChangeLog>
